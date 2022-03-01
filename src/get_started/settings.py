@@ -1,8 +1,8 @@
 """Project settings."""
-from get_started.hooks import ProjectHooks, HydraLoadConfigHook
+from get_started.hooks import ProjectHooks, HydraConfigHook
 
 # Instantiate and list your project hooks here
-HOOKS = (ProjectHooks(), HydraLoadConfigHook())
+HOOKS = (ProjectHooks(), HydraConfigHook())
 
 # List the installed plugins for which to disable auto-registry
 # DISABLE_HOOKS_FOR_PLUGINS = ("kedro-viz",)
