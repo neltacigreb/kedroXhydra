@@ -1,3 +1,5 @@
+# @package base.parameters
+
 # Parameters for the example pipeline. Feel free to delete these once you
 # remove the example pipeline from hooks.py and the example nodes in
 # `src/pipelines/`

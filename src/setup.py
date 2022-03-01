@@ -20,7 +20,8 @@ setup(
     name="get_started",
     version="0.1",
     packages=find_packages(exclude=["tests"]),
-    entry_points={"console_scripts": [entry_point]},
+    entry_points={"console_scripts": [entry_point],
+                  "kedro.cli_hooks": ["hydra_hook = hydra_hook.plugin:cli_hooks"]},
     install_requires=requires,
     extras_require={
         "docs": [
