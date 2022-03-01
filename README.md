@@ -1,3 +1,11 @@
+# Hydra bug reproduce steps
+
+In the command prompt:
+- ``` pip install -r src/requirements.txt ```
+- ```kedro run```
+
+To resolve the bug, comment the decorator, and uncomment the lines 21-22 in `src/get_started/pipeline_regitry.py` 
+
 # Kedro Iris
 
 ## Overview
