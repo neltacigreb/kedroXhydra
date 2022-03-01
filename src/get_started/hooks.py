@@ -5,7 +5,7 @@ from typing import List
 
 import hydra
 from kedro.config import ConfigLoader
-from kedro.framework.cli.hooks import cli_hook_impl
+from kedro.framework.cli.hooks.markers import cli_hook_spec
 from kedro.framework.cli.hooks.specs import CLICommandSpecs
 from kedro.framework.hooks import hook_impl
 from kedro.framework.hooks.specs import PipelineSpecs
@@ -19,12 +19,16 @@ from omegaconf import DictConfig
 class HydraLoadConfigHook(CLICommandSpecs, PipelineSpecs):
     cfg: DictConfig
 
-    @cli_hook_impl
+    @cli_hook_spec
     def before_command_run(
             self, project_metadata: ProjectMetadata, command_args: List[str]
     ) -> None:
-        overrides = command_args
-        config_name = command_args
+        """
+        # TODO this code is not reached when HydraLoadConfigHook is defined in settings.py
+        #  but it is when defined as a plugin then installed
+        """
+        overrides = command_args # todo
+        config_name = command_args # todo
         if overrides is None:
             overrides = []
         hydra.initialize(config_path=os.environ['CONF_ROOT'])

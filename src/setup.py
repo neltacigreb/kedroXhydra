@@ -4,7 +4,6 @@ entry_point = (
     "get-started = get_started.__main__:main"
 )
 
-
 # get the dependencies and installs
 with open("requirements.txt", encoding="utf-8") as f:
     # Make sure we strip all comments and options (e.g "--extra-index-url")
@@ -20,8 +19,9 @@ setup(
     name="get_started",
     version="0.1",
     packages=find_packages(exclude=["tests"]),
-    entry_points={"console_scripts": [entry_point],
-                  "kedro.cli_hooks": ["hydra_hook = hydra_hook.plugin:cli_hooks"]},
+    entry_points={"console_scripts": [entry_point]}
+    # "kedro.cli_hooks": ["hydra_hook = hydra_hook.plugin:cli_hooks"]}
+    ,
     install_requires=requires,
     extras_require={
         "docs": [
