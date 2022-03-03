@@ -14,7 +14,7 @@ def create_pipeline(**kwargs):
         [
             node(
                 split_data,
-                ["example_iris_data", "params:example_test_data_ratio"],
+                ["example_iris_data", "cfg:base>parameters>example_test_data_ratio"],
                 dict(
                     train_x="example_train_x",
                     train_y="example_train_y",

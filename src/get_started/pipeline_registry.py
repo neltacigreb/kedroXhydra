@@ -1,11 +1,10 @@
 """Project pipelines."""
 from typing import Dict
 
-import hydra
-from get_started.pipelines import data_engineering as de
-from get_started.pipelines import data_science as ds
 from kedro.pipeline import Pipeline
 
+from get_started.pipelines import data_engineering as de
+from get_started.pipelines import data_science as ds
 
 
 def register_pipelines() -> Dict[str, Pipeline]:

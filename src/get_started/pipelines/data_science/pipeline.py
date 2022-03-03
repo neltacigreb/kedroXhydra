@@ -14,7 +14,7 @@ def create_pipeline(**kwargs):
         [
             node(
                 train_model,
-                ["example_train_x", "example_train_y", "parameters"],
+                ["example_train_x", "example_train_y", "cfg:base>parameters"],
                 "example_model",
                 name="train",
             ),
