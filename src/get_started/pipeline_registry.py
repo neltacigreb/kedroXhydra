@@ -2,12 +2,15 @@
 from typing import Dict
 
 from kedro.pipeline import Pipeline
+from omegaconf import DictConfig
 
 from get_started.pipelines import data_engineering as de
 from get_started.pipelines import data_science as ds
+from .hydra_kedro import hydra_main
 
 
-def register_pipelines() -> Dict[str, Pipeline]:
+@hydra_main(config_path="hydra_conf", config_name="config")
+def register_pipelines(cfg: DictConfig) -> Dict[str, Pipeline]:
     """Register the project's pipelines.
 
     Returns:

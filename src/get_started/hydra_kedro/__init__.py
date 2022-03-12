@@ -1,5 +1,5 @@
-from .decorator import main
+from .decorator import hydra_main
 
 __all__ = [
-    "main"
+    "hydra_main"
 ]

@@ -23,7 +23,7 @@ from ..hooks import ProjectHooks
 _pipelines_registered = None
 
 
-def main(
+def hydra_main(
         config_path: Optional[str] = _UNSPECIFIED_,
         config_name: Optional[str] = None,
 ):
@@ -48,8 +48,8 @@ def main(
     kedro_context = kedro_session.load_context()
     kedro_extra_params = kedro_context.params
 
-    if ('hydra_overrides' in kedro_extra_params) or ('ho' in kedro_extra_params):
-        hydra_overrides = shlex.split(kedro_extra_params['hydra_overrides'])
+    if 'hydra' in kedro_extra_params:
+        hydra_overrides = shlex.split(kedro_extra_params['hydra'])
         sys.argv = sys.argv + hydra_overrides
 
     def root_decorator(pipeline_registry_fun: TaskFunction):
