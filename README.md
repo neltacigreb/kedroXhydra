@@ -1,3 +1,6 @@
+kedro version : 0.17.7
+hydra version : 1.1.1
+
 # kedroXhydra
 
 Workarounds to be able to use Hydra with Kedro. A reproducible example of the issue encountered when using hydra in a usual way can be found [in this branch](https://github.com/neltacigreb/kedroXhydra/tree/hydra_dec_samplebug). This repo contains examples of using Hydra in Kedro via 2 implemantations (decorator or hook), on the tutorial project using iris dataset.
